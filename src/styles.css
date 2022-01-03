@@ -1,0 +1,212 @@
+.App {
+  font-family: sans-serif;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+html,
+body,
+#app,
+#root,
+#app > div {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+#menuItem1 {
+}
+
+#item1 {
+  rotate: -4deg;
+}
+#item2 {
+  rotate: 5deg;
+  margin-right: -1px;
+}
+
+#item3 {
+  rotate: -3deg;
+  margin-right: -1px;
+}
+
+.CanvasMenuItem {
+  font-family: serif;
+  font-size: 17.5px;
+
+  text-align: center;
+  margin-right: 30px;
+  height: 11px;
+  padding-top: 1px;
+
+  cursor: pointer;
+
+  transition: all 0.25s ease-out;
+
+  z-index: 100;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1.07);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+@font-face {
+  font-family: dontTell;
+  src: url(./dont-tell.otf);
+}
+
+.WhatImDoingContainer {
+  display: inline;
+  padding-right: min(calc(34px + 45%), 274px);
+  white-space: nowrap;
+}
+
+.PulseAnimate {
+  animation: pulse 2.5s ease-out infinite;
+}
+.MessagePage h3 {
+  font-size: min(7vw, 48px);
+  overflow: hidden;
+  position: absolute;
+  rotate: -2deg;
+  white-space: nowrap;
+  top: -1.1em;
+  left: 2.55em;
+
+  padding: 2px 8px 2px 6px;
+}
+
+.MessagePage h3:hover {
+  animation: none;
+  transform: scale(1.07);
+}
+
+.highlight {
+  background-color: yellow;
+}
+
+.MessagePage h2 {
+  font-size: min(7vw, 48px);
+
+  padding-left: 6px;
+  margin-right: 20%;
+
+  rotate: -0.6deg;
+}
+
+.MessagePage #first {
+  margin-top: -12px;
+  margin-right: 20%;
+  rotate: 0;
+}
+
+.MessagePage h1 {
+  font-size: 5.5em;
+  rotate: -3deg;
+}
+.MessagePage #last {
+  rotate: -2deg;
+  margin-right: 20px;
+  max-width: 700px;
+}
+
+.MessagePage * {
+  font-family: dontTell;
+  text-transform: uppercase;
+  font-weight: normal;
+}
+
+.MessagePage {
+  width: 60%;
+  min-width: min(360px, 100vw);
+  margin-left: min(130px, 10vw);
+  max-width: 800px;
+  display: flex;
+  flex-flow: column;
+  align-items: stretch;
+}
+.CanvasMenu {
+  bottom: 7px;
+  right: -52px;
+  position: fixed;
+  width: 200px;
+}
+
+.CanvasMenuItemNotHovered {
+  color: grey;
+  transform: scale(0.9);
+}
+
+.CanvasMenuItem:hover,
+#item1:hover,
+#item2:hover,
+#item3:hover {
+  rotate: -0.1deg;
+  color: white;
+  transform: scale(1.1);
+}
+
+.HelloFadeOut {
+  transition: opacity 0.35s ease-out;
+}
+
+.HelloFadeIn {
+  transition: opacity 0.25s ease-out;
+}
+
+.CloseButton {
+  width: 42px;
+  position: fixed;
+  top: 58%;
+  right: min(20%, 0px);
+  padding-left: 30px;
+  cursor: pointer;
+  transition: transform 0.2s ease-out;
+
+  /* bring your own prefixes */
+  transform: rotate(3.71deg) translate(-50%, -50%);
+}
+
+.CloseButton:hover {
+  transform: rotate(-0.5deg) translate(-50%, -50%) scale(1.1);
+}
+
+@media only screen and (max-width: 640px) {
+  .CloseButton {
+    width: 27px;
+    position: absolute;
+    cursor: pointer;
+    top: -10%;
+    right: 2%;
+    padding-left: 30px;
+
+    /* bring your own prefixes */
+    transform: rotate(3.71deg) translate(-50%, -50%);
+  }
+}
+
+.Logo {
+  width: 300px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  padding-left: 30px;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+}
+
+.Canvas {
+  bottom: 0px;
+  right: -220px;
+  position: fixed;
+}
